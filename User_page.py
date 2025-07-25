@@ -14,11 +14,11 @@ load_dotenv()
 
 # Database configuration - UPDATE WITH YOUR ACTUAL CREDENTIALS
 DB_CONFIG = {
-    'host': os.getenv('DB_HOST', 'localhost'),
-    'database': os.getenv('DB_NAME', ''),
-    'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', ''),
-    'port': os.getenv('DB_PORT', '5432')
+    'host': st.secrets.get("DB_HOST", os.getenv("DB_HOST")),
+    'database': st.secrets.get("DB_NAME", os.getenv("DB_NAME")),
+    'user': st.secrets.get("DB_USER", os.getenv("DB_USER")),
+    'password': st.secrets.get("DB_PASSWORD", os.getenv("DB_PASSWORD")),
+    'port': st.secrets.get("DB_PORT", os.getenv("DB_PORT", "5432"))
 }
 
 
