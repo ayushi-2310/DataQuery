@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Load API key from .env file
 load_dotenv()
-openai.api_key = st.secrets.get("OPENAI_API_KEY", os.getenv("OPENAI_API_KEY"))
+openai.api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
 
 class NL2SQLConverter:
     """
